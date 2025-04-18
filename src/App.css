@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+button {
+  @apply border border-gray-800 p-1 rounded-md
+}
+
+input {
+  @apply bg-amber-50
+}
+
+input:focus {
+  @apply outline
+}
