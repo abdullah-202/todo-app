@@ -52,7 +52,7 @@ function App() {
             <h1 className="text-gray-100 font-bold text-4xl text-center">
               TODO List
             </h1>
-            {chores.map((item) => (
+            {chores.map((item, index) => (
               <div className="flex items-center p-2 rounded-2xl justify-between bg-white/50 text-xl my-4 mx-4 wrap-anywhere">
                 <div className={`${item.isClicked && "line-through"} w-[50%]`}>
                   {item.chore}
@@ -62,7 +62,9 @@ function App() {
                   <button
                     className="bg-[#02b505]"
                     onClick={() => {
-                      item.isClicked = true;
+                      const newArr = [...chores];
+                      newArr[index].isClicked = true;
+                      setChores(newArr);
                     }}
                   >
                     <img src="./tick.svg" width={40} alt="Tick Icon" />
