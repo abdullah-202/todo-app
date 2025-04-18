@@ -21,7 +21,7 @@ function App() {
     }
   };
 
-  const onEnterPress = (event) => {
+  const onEnterPress = (event: any) => {
     if (event.key === "Enter") {
       onClickSubmit();
     }
@@ -52,7 +52,7 @@ function App() {
             <h1 className="text-gray-100 font-bold text-4xl text-center">
               TODO List
             </h1>
-            {chores.map((item, index) => (
+            {chores.map((item: any, index: any) => (
               <div className="flex items-center p-2 rounded-2xl justify-between bg-white/50 text-xl my-4 mx-4 wrap-anywhere">
                 <div className={`${item.isClicked && "line-through"} w-[50%]`}>
                   {item.chore}
@@ -72,7 +72,7 @@ function App() {
                   <button
                     className="bg-[#fc030f]"
                     onClick={() =>
-                      setChores(chores.filter((a) => a.id !== item.id))
+                      setChores(chores.filter((a: any) => a.id !== item.id))
                     }
                   >
                     <img
